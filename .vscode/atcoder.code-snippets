@@ -1,0 +1,482 @@
+// atcoder用のスニペット
+{
+	"underbar": {
+		"prefix": "under",
+		"body": [
+			"_"
+		],
+		"description": "  "
+	},
+	"back/": {
+		"prefix": "back",
+		"body": [
+			"\\"
+		],
+		"description": "  "
+	},
+	"input a": {
+		"prefix": "intin",
+		"body": [
+			"int(input())"
+		],
+		"description": ""
+	},
+	"input a, b, c": {
+		"prefix": "mapint",
+		"body": [
+			"map(int,input().split())"
+		],
+		"description": "read a, b, c as int"
+	},
+	"input a1,a2,a3": {
+		"prefix": "listmap",
+		"body": [
+			"list(map(int,input().split()))"
+		],
+		"description": "  "
+	},
+	"alphabet list": {
+		"prefix": "alphabet",
+		"body": [
+			"abcdefghijklmnopqrstuvwxyz"
+		],
+		"description": "  "
+	},
+	"limit extension": {
+		"prefix": "limit",
+		"body": [
+			"import sys",
+			"sys.setrecursionlimit(100000000)"
+		],
+		"description": "  "
+	},
+	"list reverse": {
+		"prefix": "reverse",
+		"body": [
+			"list(reversed(a))"
+		],
+		"description": "  "
+	},
+	"cheat of deque": {
+		"prefix": "cheat_deque",
+		"body": [
+			"from collections import deque",
+			"d=deque()#空のキューを作成",
+			"d.append(~)#右に要素追加",
+			"d.appendleft(~)#左に要素追加",
+			"d.pop(~)#右の要素を取り出す",
+			"d.popleft(~)#左の要素を取り出す",
+			"d[~]#参照",
+			"d.remove(~)#要素を指定して削除",
+			"d.clear()#全削除",
+		],
+		"description": "  "
+	},
+	"cheat of heap": {
+		"prefix": "cheat_heap",
+		"body": [
+			"import heapq",
+			"q=[] #空のキューを作成",
+			"q.append([1,3,5,10]) #キューに要素を追加",
+			"q.sort() #初回は自分でソートする",
+			"heapq.heappop(q) #一番小さい値を取り出す",
+			"heapq.heappush(q,nxt) #次の値nxtを追加してソートする",
+		],
+		"description": "  "
+	},
+	"cheat of set": {
+		"prefix": "cheatset",
+		"body": [
+			"s=set()#空の集合を作成",
+			"s.add(~) #要素追加",
+			"s.pop(~) #要素を取り出す",
+			"s.remove(~) #要素を削除",
+			"s.clear() #要素を全削除",
+			"s1 | s2 #s1とs2の和集合",
+			"s1 - s2 #s1からs2を引いた差集合",
+			"s1 ^ s2 #s1とs2の対称差集合",
+			"s1 & s2 #s1とs2の積集合",
+			"list(s)[i] #集合sのi番目要素を取り出す",
+			"i in s #要素iが集合sにあるか判定",
+			"s1 <= s2 #s1がs2の部分集合か判定",
+			"s1 >= s2 #s1がs2の上位集合か判定",
+			"s1.isdisjoint(s2) #s1とs2が互いに素か判定",
+		],
+		"description": "  "
+	},
+	"cheat of itertools": {
+		"prefix": "cheat_combination",
+		"body": [
+			"import itertools",
+			"choice=[[1,2],[3,4],[5,6]]",
+			"for i in itertools.product(*choice):print(i)",
+		],
+		"description": "  "
+	},
+	"ceil": {
+		"prefix": "ceil",
+		"body": [
+			"import math",
+			"math.ceil()#切り上げ,1.1->2,-1.4->-1",
+		],
+		"description": "  "
+	},
+	"floor": {
+		"prefix": "floor",
+		"body": [
+			"import math",
+			"math.floor()#切り下げ,1.1->1,-1.4->-2",
+		],
+		"description": "  "
+	},
+	"tan^-1(y/x)": {
+		"prefix": "atan",
+		"body": [
+			"import math",
+			"math.atan2(y,x)#tan^-1(1,1)=math.pi/4,-pi~pi",
+		],
+		"description": "  "
+	},
+	"sort template": {
+		"prefix": "sorttemp",
+		"body": [
+			"hoge.sort(key=lambda x: x[0],reverse=False)",
+			"#整数列の非破壊のソート(降順)",
+			"p_sorted = sorted(p, reverse=True)",
+			"#文字列をソートして結合,.sortは使えない",
+			"s_sorted = ''.join(sorted(s, reverse=True))",
+		],
+		"description": "  "
+	},
+	"sys": {
+		"prefix": "sys",
+		"body": [
+			"import sys",
+			"input = sys.stdin.readline#().rstrip"
+		],
+		"description": "  "
+	},
+	"dp backward, frog1": {
+		"prefix": "dpback",
+		"body": [
+			"dp=[0]*n",
+			"dp[0]=0",
+			"dp[1]=dp[0]+abs(h[1]-h[0])",
+			"for i in range(2,n):",
+			"	cost1=dp[i-2]+abs(h[i]-h[i-2])",
+			"	cost2=dp[i-1]+abs(h[i]-h[i-1])",
+			"	dp[i]=min(cost1,cost2)",
+		],
+		"description": "  "
+	},
+	"dp forward, frog2": {
+		"prefix": "dpforward",
+		"body": [
+			"import math",
+			"infty=math.inf",
+			"dp=[infty]*n",
+			"dp[0]=0",
+			"for i in range(n-1):",
+			"	for j in range(i+1,i+k+1):",
+			"		if j<n:",
+			"			cost=dp[i]+abs(h[i]-h[j])",
+			"			dp[j]=min(dp[j],cost)",
+		],
+		"description": "  "
+	},
+	"infty": {
+		"prefix": "infty",
+		"body": [
+			"import math",
+			"infty=math.inf",
+		],
+		"description": "  "
+	},
+	"convert i to nth": {
+		"prefix": "cheat nth",
+		"body": [
+			"def nth(i,n):#整数iをn進数に変換",
+			"	ans=str('')",
+			"	while i>0:",
+        	"		ans=str(i%n)+ans",
+			"		i=i//n",
+    		"	return int(ans)",
+		],
+		"description": "  "
+	},
+	"cumsum by itertools": {
+		"prefix": "cheat cumsum",
+		"body": [
+			"import itertools",
+			"cumsum=list(itertools.accumulate(b))#最初の０はなし",
+			"cumsum=[0]+cumsum#ゼロを追加",
+		],
+		"description": "  "
+	},
+	"gcd&lcm of (a & b)": {
+		"prefix": "cheat gcd lcm",
+		"body": [
+			"import math",
+			"ab_gcd = math.gcd(a,b) # ※a,b,cのgcdはgcd(ab,c)",
+			"ab_lcm = a*b//ab_gcd # a,b,cの最小公倍数",
+		],
+		"description": "  "
+	},
+	"zero pading left": {
+		"prefix": "cheat zeroleft",
+		"body": [
+			"ans=('67').zfill(6)#67->000067",
+		],
+		"description": "  "
+	},
+	"permutation of [1,3,5]": {
+		"prefix": "cheat permutaion",
+		"body": [
+			"import itertools",
+			"lst=(itertools.permutations([1,3,5]))",
+			"for i in lst:",
+    		"	print(list(i))#[1,3,5]...",
+			"for p in itertools.permutations(range(10))#0~10の順列",
+		],
+		"description": "  "
+	},
+	"combination: 2choice from [1,3,5,7]": {
+		"prefix": "cheat combination",
+		"body": [
+			"import itertools",
+			"lst=(itertools.combinations([1,3,5,7],2))",
+			"for i in lst:",
+    		"	print(list(i))",
+		],
+		"description": "  "
+	},
+	"factorial of n, n!": {
+		"prefix": "factorial_cheat",
+		"body": [
+			"import math",
+			"nfact=math.factorial(n) #n!",
+		],
+		"description": "  "
+	},
+	"lru cathe for def~": {
+		"prefix": "lru_cathe_cheat",
+		"body": [
+			"#何度も呼び出す関数をキャッシュで高速化。pypyはNG",
+			"from functools import lru_cache",
+			"@lru_cache",
+			"def hoge(a,b,c,...):",
+		],
+		"description": "  "
+	},
+	"sort of string": {
+		"prefix": "string_sort_cheat",
+		"body": [
+			"s=list(input())",
+			"s.sort()",
+			"s=''.join(s)",
+		],
+		"description": "  "
+	},
+	"s -> h:m:s": {
+		"prefix": "cheat_hms_time",
+		"body": [
+			"#s=hoge#[second]",
+			"h=s//3600",
+			"m=(s%3600)//60",
+			"s=s%60",
+			"print(f'{h}:{m}:{s}')",
+		],
+		"description": "  "
+	},
+	"discription of print": {
+		"prefix": "cheat_print",
+		"body": [
+			"hoge = 'test' ",
+			"a,b,c=10/3,10/3,10/3",
+			"print(hoge,end='\\n') #出力後に改行（略可）",
+			"print(hoge,end='') #出力後に改行なし",
+			"print(f'{hoge}:{hoge}:{hoge}') #:区切り",
+			"print(*[1,2,3]) #要素のみ出力. 1 2 3",
+			"print(','.join(['1','2','3'])) #,区切り.文字列のみ",
+			"print('-'.join([str(n) for n in [1,2,3]])) #数字の場合",
+			"print(f'{a} {b:.5f} {c:.6f}') #フォーマット指定 ",
+			"print('{:.5f}'.format(c)) #フォーマット指定（単一）""print('',a,end='') #先頭に半角スペースを入れ入力、改行なし"
+		],
+		"description": "  "
+	},
+	"index of list": {
+		"prefix": "cheat_index",
+		"body": [
+			"mark=['S','H','C','D',13,25]",
+			"print(mark.index('H')) #要素の場所を返す",
+			"print(mark.index('D')) #要素の場所を返す",
+			"print(mark.index(13)) #要素の場所を返す",
+		],
+		"description": "  "
+	},
+	"cheat of string (ex.upper,count)": {
+		"prefix": "cheat_string",
+		"body": [
+			"test='Hello,World.'",
+			"print(test.upper())#大文字に変換",
+			"print(test.lower())#小文字に変換",
+			"print('A'.isupper())#大文字ならTrue",
+			"print('b'.islower())#小文字ならTrue",
+			"print(test.swapcase())#大文字と小文字を入れ替える",
+			"print(ord('t')-ord('a'))#aをゼロとしてtの順番",
+			"print(chr(ord('a')+10))#aから10番目の文字",
+		],
+		"description": "  "
+	},
+	"cheat of geometry(ex.sin,cos,tan,rad)": {
+		"prefix": "cheat_geometry_sin_cos_tan_rad",
+		"body": [
+			"rad=math.radians(90)#角度(90)をラジアンに変換",
+			"deg=math.degree(0.5*math.pi)#ラジアン(0.5piを角度に変換)",
+			"print(math.sin(rad))#sin(ラジアン)",
+			"c=math.sqrt(a**2+b**2-2*a*b*math.cos(rad))#余弦定理",
+		],
+		"description": "  "
+	},
+	"reverse of list": {
+		"prefix": "listrev",
+		"body": [
+			"list(reversed(~))",
+		],
+		"description": "  "
+	},
+	"cheat of dictionary": {
+		"prefix": "dict_cheat",
+		"body": [
+			"dict={}",
+			"dict[3]=0  #初期値、{3:0}となる",
+			"dict[3]+=1 #初期値、{3:1}となる",
+			"dict['hoge']=13 #{hoge:13}となる",
+			"dict2={'a':3,'b':'mash3','c':5}",
+			"print(max(dict, key=dict.get)) #valueが最大のkeyを出力",
+		],
+		"description": "  "
+	},
+	"cheat of bit search": {
+		"prefix": "bit_cheat",
+		"body": [
+			"#ビット変換：9=1*8+0*4+1*2+1*1:(1001)",
+			"#and: 両方1, or: 少なくとも片方が１, xor: 片方だけ1",
+			"#ビットごとのAND：a&b。3(0011)&9(1001)=1(0001)",
+			"#ビットごとのOR：a|b。 3(0011)|9(1001)=11(1011)",
+			"#ビットごとのXOR：a^b。3(0011)|9(1001)=10(1010)",
+			"#-----bit全探索のテンプレート-------:",
+			"n=3",
+			"imax=1<<n #1をn桁シフト。=2^n",
+			"#ex. 1<<0=1(1), 1<<1=2(10), 1<<3=8(1000)",
+			"for i in range(imax):#000~111",
+			"	check=[False]*n",
+			"	for j in range(n):#右からj+1文字目の確認",
+			"		if i&(1<<j)==0:#j+1文字目は0",
+			"			# j番目がゼロの時の操作",
+			"			check[j]=0",
+			"			continue",
+			"		else:#注意：i&(1<<j)は0,1以外もありうる",
+			"			# j番目がゼロ以外のときの操作",
+			"			check[j]=1",
+			"			continue",
+			"	print(check)",
+		],
+		"description": "  "
+	},
+	"cheat of bisect": {
+		"prefix": "bisect_cheat",
+		"body": [
+			"import bisect",
+			"a=[1,3,10,12,4]#参照する配列",
+			"b=5",
+			"a.sort()#まず昇順にソート",
+			"pl=bisect.bisect_left(a,b)#aの左からp番目、同じ数字なら左",
+			"print(a[pl-1],b,a[pl])#p=0, nの時は注意",
+			"pr=bisect.bisect_right(a,b)#aの左からp番目、同じ数字なら右",
+			"print(a[pr-1],b,a[pr])#p=0, nの時は注意",
+		],
+		"description": "  "
+	},
+	"cheat of prime factorization": {
+		"prefix": "pfact_cheat",
+		"body": [
+			"def pfact(x): # xの素因数を重複なくlistで返す.O(sqrt(x))",
+			"	res=set()#戻り値",
+			"	imax=x",
+			"	for i in range(2,imax):",
+			"		if i*i>x: # i=2~sqrt(x)まで探索",
+			"			break",
+			"		while x%i==0:",
+			"			x=x//i",
+			"			res.add(i)",
+			"	if x!=1:",
+			"		res.add(x)",
+			"	return list(res)",
+		],
+		"description": "  "
+	},
+	"cheat of prime factorization all": {
+		"prefix": "pfact_all_cheat",
+		"body": [
+			"def pfact_all(x): # xの素因数を重複込みでlistで返す.O(sqrt(x))",
+			"	res=[]#戻り値",
+			"	imax=x",
+			"	for i in range(2,imax):",
+			"		if i*i>x: # i=2~sqrt(x)まで探索",
+			"			break",
+			"		while x%i==0:",
+			"			x=x//i",
+			"			res.append(i)",
+			"	if x!=1:",
+			"		res.append(x)",
+			"	return res",
+		],
+		"description": "  "
+	},
+	"cheat of a**b mod m": {
+		"prefix": "binpower_pow_cheat",
+		"body": [
+			"a=2021",
+			"b=617",
+			"m=1000000007",
+			"ans=pow(a,b,m) #a**b mod m(組み込み関数使用)""def binpower(a,b,m):#繰り返し二乗法",
+			"	ans=1",
+			"	while b!=0:",
+			"		if b%2==1:",
+			"			ans=ans*a%m",
+			"		a=a*a%m",
+			"		b=b//2",
+			"	return ans",
+		],
+		"description": "  "
+	},
+	"cheat of stack": {
+		"prefix": "stack_cheat",
+		"body": [
+			"stack=[]",
+			"while len(stack)>0:",
+			"	q=stack.pop()",
+		],
+		"description": "  "
+	},
+	"cheat of chr ord": {
+		"prefix": "chr_ord_cheat",
+		"body": [
+			"aord=ord('a')",
+			"bord=ord('b')",
+			"c=chr(bord+1)",
+		],
+		"description": "  "
+	},
+	"cheat of rounding_0.5->1": {
+		"prefix": "rounding_cheat",
+		"body": [
+			"a=0.5",
+			"b=1.467""a_round=round(a+0.0005,0)#小数点1桁で四捨五入。0.5は危険なので微小量を足す",
+			"b_round=round(b,1)#小数点2桁で四捨五入",
+			"a_round_int=int(a_round)#roundは小数になるので整数に変換"
+		],
+		"description": "  "
+	},
+}
